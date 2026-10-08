@@ -1,0 +1,10 @@
+{
+  "skill": "prelaunch-harness",
+  "test_cases": [
+    {"input": "Audit this app before we launch", "should_trigger": true},
+    {"input": "Check the vibe-coded site for the six legal traps", "should_trigger": true},
+    {"input": "Google Fonts GDPR, session replay, CAN-SPAM, DMCA agent — prelaunch pass", "should_trigger": true},
+    {"input": "Rewrite this landing page copy to sound warmer", "should_trigger": false},
+    {"input": "Design a logo for the launch", "should_trigger": false}
+  ]
+}
