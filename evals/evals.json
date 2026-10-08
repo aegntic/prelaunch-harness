@@ -1,0 +1,32 @@
+{
+  "skill": "prelaunch-harness",
+  "test_cases": [
+    {
+      "name": "remote_font_is_high",
+      "input": "Audit this page before launch. It loads Inter from fonts.googleapis.com and has a contact form.",
+      "assertions": [
+        "Flags identifier-leak for the Google font host",
+        "Does not call the page compliant",
+        "Does not invent a postal address"
+      ]
+    },
+    {
+      "name": "replay_vendor_blocks_ship",
+      "input": "We added Hotjar. Can we launch the signup today?",
+      "assertions": [
+        "Maps Hotjar to input-capture",
+        "Requires consent plus input masking or removal before calling the control present",
+        "Separates the capacity gate from the replay finding"
+      ]
+    },
+    {
+      "name": "no_surface_is_unknown",
+      "input": "Check our coming-soon HTML. No form, no mail, no uploads, system font only.",
+      "assertions": [
+        "Passes identifier-leak only if no third-party host remains",
+        "Marks recurring-assent and user-content as not present, not as registered",
+        "States the result is an engineering control, not legal advice"
+      ]
+    }
+  ]
+}
