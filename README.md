@@ -32,23 +32,13 @@ boundary → inventory → scan → map → patch only what is local → report
 
 ## Install
 
-`SKILL.md` must sit directly inside the skill folder. One extra nesting level and the harness will not see it.
-
-| Harness | Path |
-|---|---|
-| Claude Code, project | `.claude/skills/prelaunch-harness/` |
-| Claude Code, user | `~/.claude/skills/prelaunch-harness/` |
-| Codex, Cursor, Gemini CLI, OpenCode | `.agents/skills/prelaunch-harness/` or `~/.agents/skills/prelaunch-harness/` |
-| Any Agent Skills runtime | the directory your runtime already reads |
-
 ```bash
-git clone https://github.com/aegntic/prelaunch-harness.git
-# project-local, Claude Code
-mkdir -p .claude/skills
-cp -R prelaunch-harness .claude/skills/prelaunch-harness
+npx skills add aegntic/prelaunch-harness -y
 ```
 
-Start a new session after install. The description is the trigger. Phrases that should load it: pre-launch audit, ship checklist, remote fonts, session replay, marketing mail, auto-renew, designated agent.
+That is the install. Node is the only dependency. The CLI writes the skill into the agents you have installed. `-y` skips the prompt.
+
+The installable copy lives at `skills/prelaunch-harness/`. Root `SKILL.md` is the same file for people who clone. Do not point the CLI at a root-only layout: it keeps `SKILL.md` and drops the scanner and references.
 
 ## The six families
 
@@ -89,16 +79,11 @@ Template: [assets/findings.template.md](assets/findings.template.md).
 
 ```
 prelaunch-harness/
-├── SKILL.md                 # harness entry
-├── scripts/audit_surface.py # deterministic signals
+├── SKILL.md
+├── skills/prelaunch-harness/   # what npx skills add installs
+├── scripts/audit_surface.py
 ├── references/
-│   ├── INDEX.md
-│   ├── controls.md
-│   ├── surfaces.md
-│   └── report-contract.md
 ├── assets/
-│   ├── findings.template.md
-│   └── mark.svg
 └── evals/
 ```
 
