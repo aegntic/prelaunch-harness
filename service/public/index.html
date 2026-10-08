@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scan receipt \u2014 not a certification</title>
+  <style>
+    body { margin: 0; background: #0a0a0a; color: #f4f4f5; font: 16px/1.5 ui-sans-serif, system-ui, sans-serif; }
+    main { max-width: 42rem; margin: 0 auto; padding: 48px 20px 80px; }
+    h1 { font-weight: 560; letter-spacing: -0.03em; font-size: 2rem; }
+    .mark { color: #7dd3e0; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+    code { font-family: ui-monospace, monospace; color: #7dd3e0; }
+    .ban { border-left: 2px solid #dc2626; padding-left: 14px; color: #d4d4d8; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="mark">Prelaunch harness</p>
+    <h1>A scan receipt is not a certification.</h1>
+    <p class="ban">This mark does not say verified, checked, approved, compliant, or safe to launch. It records that a file set was submitted to a signal scanner. The operator remains responsible for what ships.</p>
+    <p>Agents call <code>POST /scan</code> with <code>{ subject, files: [{ path, content }] }</code>. The response is a receipt: tree hash, family table, findings. Embed the mark only beside that receipt.</p>
+    <img alt="Scan receipt. Not a certification." src="/badge/sample.svg" width="248" height="48">
+    <p>Price, when <code>PAY_TO</code> is set: 0.02 USDC on Base. Unset, the scan stays open so the receipt format can be tested. Payment does not buy a legal conclusion.</p>
+  </main>
+</body>
+</html>

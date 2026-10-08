@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/scan", "destination": "/api/scan" },
+    { "source": "/badge/:id", "destination": "/api/badge?id=:id" }
+  ]
+}
